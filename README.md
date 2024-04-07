@@ -3,46 +3,14 @@
 
 ## Toggle Buttons Example
 
-This is an example of how to use toggle buttons in your mobile app. Toggle buttons are a type of button that can be switched on or off, providing a binary choice for the user.
+This Dart code is a simple Flutter application that displays a set of toggle buttons which change the background color of the app when clicked.
 
-To use toggle buttons in your app, you can follow these steps:
+The [`main`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22main%22%5D "lib/main.dart") function is the entry point of the application. It calls the `runApp` function with an instance of [`MyApp`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22MyApp%22%5D "lib/main.dart") as an argument. [`MyApp`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22MyApp%22%5D "lib/main.dart") is a `StatelessWidget` which returns a `MaterialApp` widget in its [`[`build`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22build%22%5D "lib/main.dart")`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FUsers%2FLight%2FOneDrive%20-%20Personal%2FOneDrive%2FDocuments%2Fflutter%2Fmobile_app806%2Fbuild%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D "c:\Users\Light\OneDrive - Personal\OneDrive\Documents\flutter\mobile_app806\build") method. The `home` property of `MaterialApp` is set to an instance of [`HomePage`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22HomePage%22%5D "lib/main.dart").
 
-1. Import the necessary dependencies:
-    ```dart
-    import 'package:flutter/material.dart';
-    ```
+[`HomePage`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22HomePage%22%5D "lib/main.dart") is a `StatefulWidget`, which means it can maintain state that can change over time. The [`createState`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22createState%22%5D "lib/main.dart") method returns an instance of [`HomePageState`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22HomePageState%22%5D "lib/main.dart"), which is where the mutable state for this widget is held.
 
-2. Create a list of boolean values to represent the state of each toggle button:
-    ```dart
-    List<bool> toggleValues = [false, false, false];
-    ```
+In [`HomePageState`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22HomePageState%22%5D "lib/main.dart"), three instance variables are declared: [`_idx`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_idx%22%5D "lib/main.dart"), [`_tgbSelected`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_tgbSelected%22%5D "lib/main.dart"), and [`_bgColor`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_bgColor%22%5D "lib/main.dart"). [`_idx`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_idx%22%5D "lib/main.dart") is an integer that keeps track of the currently selected toggle button. [`_tgbSelected`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_tgbSelected%22%5D "lib/main.dart") is a list of booleans that represents the selected state of each toggle button. [`_bgColor`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_bgColor%22%5D "lib/main.dart") is a `Color` that represents the current background color of the container in the `body` of the `Scaffold`.
 
-3. Build the toggle buttons using the `ToggleButtons` widget:
-    ```dart
-    ToggleButtons(
-      children: [
-         Icon(Icons.favorite),
-         Icon(Icons.star),
-         Icon(Icons.thumb_up),
-      ],
-      isSelected: toggleValues,
-      onPressed: (index) {
-         setState(() {
-            toggleValues[index] = !toggleValues[index];
-         });
-      },
-    )
-    ```
+The [`[`build`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22build%22%5D "lib/main.dart")`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fc%3A%2FUsers%2FLight%2FOneDrive%20-%20Personal%2FOneDrive%2FDocuments%2Fflutter%2Fmobile_app806%2Fbuild%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%5D "c:\Users\Light\OneDrive - Personal\OneDrive\Documents\flutter\mobile_app806\build") method of [`HomePageState`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22HomePageState%22%5D "lib/main.dart") returns a `Scaffold` widget, which provides a framework in which the primary components of a Material Design app can be placed. The `appBar` property is set to an `AppBar` with a title of 'ToggleButtons Example'. The `body` property is set to a `Container` with a background color of [`_bgColor`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_bgColor%22%5D "lib/main.dart") and a `Center` widget as its child. The `Center` widget contains a `Column` widget, which in turn contains a `SizedBox`, a `Text` widget, another `SizedBox`, and a call to the [`toggleButton`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22toggleButton%22%5D "lib/main.dart") method.
 
-    In this example, we have created three toggle buttons with different icons. The `isSelected` property is set to the `toggleValues` list, which determines whether each button is selected or not. The `onPressed` callback is used to update the state of the toggle buttons when they are pressed.
-
-4. Handle the state changes in your app:
-    ```dart
-    void setState(VoidCallback fn) {
-      // Update the state of your app here
-    }
-    ```
-
-    You can define a `setState` function to handle the state changes in your app. This function will be called whenever a toggle button is pressed, allowing you to update the state of your app accordingly.
-
-By following these steps, you can easily implement toggle buttons in your mobile app. Experiment with different icons and styles to customize the look and feel of your toggle buttons.
+The [`toggleButton`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22toggleButton%22%5D "lib/main.dart") method returns a `ToggleButtons` widget. This widget displays a horizontal array of buttons that can be toggled on or off. The `children` property is a list of `Text` widgets that represent the labels of the buttons. The `isSelected` property is set to [`_tgbSelected`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_tgbSelected%22%5D "lib/main.dart"), which means the selected state of each button corresponds to the values in this list. The `onPressed` property is set to a function that updates [`_tgbSelected`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_tgbSelected%22%5D "lib/main.dart"), [`_idx`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_idx%22%5D "lib/main.dart"), and [`_bgColor`](command:_github.copilot.openSymbolInFile?%5B%22lib%2Fmain.dart%22%2C%22_bgColor%22%5D "lib/main.dart") when a button is clicked. The `setState` function is called to notify the framework that the state has changed and the widget should be redrawn.
